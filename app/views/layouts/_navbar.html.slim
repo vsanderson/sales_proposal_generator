@@ -1,14 +1,21 @@
 nav.navbar.navbar-inverse.navbar-static-top
   .container-fluid
     .navbar-header
+      button.navbar-toggle.collapsed type='button' data-toggle='collapse' data-target='#navbar-collapse'
+        .sr-only Toggle navigation
+        .icon-bar
+        .icon-bar
+        .icon-bar
       = link_to 'Sales Proposal Maker', '/', class: 'navbar-brand'
-    ul.nav.navbar-nav.navbar-right
+    .collapse.navbar-collapse#navbar-collapse
       - if current_user.guest?
-        li Welcome #{current_user.name}
-        li= link_to 'Log In', login_path
-        li= link_to 'Sign Up', new_user_path
-      - else
-        li= link_to current_user.name, user_path(current_user)
-        li= link_to 'Log Out', logout_path, method: :post
-        - nav_links.each do |name, url|
-          li= link_to name, url
+        p.navbar-text Welcome #{current_user.name}
+      ul.nav.navbar-nav.navbar-right
+        - if current_user.guest?
+          li= link_to 'Log In', login_path
+          li= link_to 'Sign Up', new_user_path
+        - else
+          li= link_to current_user.name, user_path(current_user)
+          li= link_to 'Log Out', logout_path, method: :post
+          - nav_links.each do |name, url|
+            li= link_to name, url

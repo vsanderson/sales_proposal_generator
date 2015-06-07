@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery_ujs
+#= require bootstrap-sprockets
 
 $('document').ready (event) ->
   $(@).on 'click', '.add-fields', ->
