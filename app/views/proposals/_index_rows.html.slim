@@ -1,0 +1,5 @@
+td= proposal.name
+td= proposal.customer_name
+td= proposal.line_items.count
+td= proposal.line_items.map(&:quantity).inject(:+)
+td= number_to_currency(proposal.line_items.map(&:line_price).inject(:+), precision: 4)

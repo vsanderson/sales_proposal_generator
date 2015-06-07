@@ -1,0 +1,5 @@
+- content_for :page_title, 'Editing Supplier'
+
+= form_for @supplier do |form|
+  = render 'form', form: form
+  = form.submit 'Submit', class: 'btn btn-lg btn-success'

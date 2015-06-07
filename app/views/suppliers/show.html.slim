@@ -1,0 +1,11 @@
+- content_for :page_title, @supplier.name
+
+
+p: b Products
+ul
+  - @supplier.products.each do |product|
+    li= link_to product.name, product_path(product)
+
+.btn-toolbar
+  = link_to "Edit #{@supplier.name}", edit_supplier_path(@supplier), class: 'btn btn-lg btn-info'
+  = link_to 'View All', suppliers_path, class: 'btn btn-lg btn-primary'

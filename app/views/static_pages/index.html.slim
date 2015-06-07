@@ -1,0 +1,12 @@
+
+- if user_logged_in?
+  - content_for :page_title, 'Welcome'
+
+  = render 'layouts/buttons'
+- else
+  .jumbotron
+    h1 Sales Proposal Generator
+    p Generate sales proposals here.
+    .btn-toolbar
+      = link_to 'Sign Up', signup_path, class: 'btn btn-lg btn-success'
+      = link_to 'Log In', login_path, class: 'btn btn-lg btn-primary'

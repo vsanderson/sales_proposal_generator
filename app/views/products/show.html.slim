@@ -1,0 +1,25 @@
+- content_for :page_title, @product.name
+
+p
+  b Description
+  blockquote
+    =< @product.description
+p
+  b Supplier
+  =< @product.supplier.name
+p
+  b ASI #
+  =< @product.asi_number
+p
+  b Item #
+  =< @product.item_number
+p
+  b Page #
+  =< @product.page_number
+p
+  b Price
+  =< number_to_currency(@product.price, precision: 4)
+
+.btn-toolbar
+  = link_to "Edit #{@product.name}", edit_product_path(@product), class: 'btn btn-lg btn-info'
+  = link_to 'View All', products_path, class: 'btn btn-lg btn-primary'

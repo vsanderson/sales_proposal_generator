@@ -1,0 +1,4 @@
+.btn-toolbar
+  = link_to 'View', supplier_path(supplier), class: 'btn btn-sm btn-info'
+  = link_to 'Edit', edit_supplier_path(supplier), class: 'btn btn-sm btn-warning'
+  = link_to 'Delete', supplier_path(supplier), method: :delete, confirm: 'Are you sure?', class: 'btn btn-sm btn-danger'

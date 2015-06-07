@@ -1,0 +1,14 @@
+- content_for :page_title, @customer.name
+
+p
+  b Category
+  =< @customer.category
+
+p: b Proposals
+ul
+  - @customer.proposals.each do |proposal|
+    li= link_to proposal.name, proposal_path(proposal)
+
+.btn-toolbar
+  = link_to "Edit #{@customer.name}", edit_customer_path(@customer), class: 'btn btn-lg btn-info'
+  = link_to 'View All', customers_path, class: 'btn btn-lg btn-primary'

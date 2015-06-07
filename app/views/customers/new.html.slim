@@ -1,0 +1,5 @@
+- content_for :page_title, 'New Customer'
+
+= form_for @customer do |form|
+  = render 'form', form: form
+  = form.submit 'Submit', class: 'btn btn-lg btn-success'

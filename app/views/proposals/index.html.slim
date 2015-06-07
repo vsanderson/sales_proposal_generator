@@ -1,0 +1,15 @@
+table.table
+  thead
+    tr
+      = render 'index_row_headers'
+      th
+  tbody
+    - @proposals.each do |proposal|
+      tr
+        = render 'index_rows', proposal: proposal
+        td
+          .pull-right
+            = render 'index_row_actions', proposal: proposal
+
+br
+= link_to 'New Proposal', new_proposal_path, class: 'btn btn-lg btn-default'

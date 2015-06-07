@@ -1,0 +1,7 @@
+- content_for :page_title, 'My Account'
+
+h2 #{@user.first_name} #{@user.last_name}
+p= @user.email
+.btn-toolbar
+  = link_to 'Update Account', edit_user_path(@user), class: 'btn btn-lg btn-info'
+  = link_to 'Change Password', password_user_path(@user), class: 'btn btn-lg btn-primary'

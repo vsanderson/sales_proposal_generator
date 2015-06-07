@@ -1,0 +1,15 @@
+table.table
+  thead
+    tr
+      = render 'index_row_headers'
+      th
+  tbody
+    - @products.each do |product|
+      tr
+        = render 'index_rows', product: product
+        td
+          .pull-right
+            = render 'index_row_actions', product: product
+
+br
+= link_to 'New Product', new_product_path, class: 'btn btn-lg btn-default'

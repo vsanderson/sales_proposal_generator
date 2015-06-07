@@ -1,0 +1,32 @@
+- content_for :page_title, @proposal.name
+
+p
+  b Customer:
+  =< @proposal.customer.name
+
+p: b Products
+table.table
+  thead
+    tr
+      th Name
+      th Quantity
+      th Price
+      th Discount
+      th Line Price
+  tbody
+    - @proposal.line_items.each do |line_item|
+      tr
+        td= link_to line_item.product.name, product_path(line_item.product)
+        td= line_item.quantity
+        td= number_to_currency(line_item.product.price, precision: 4)
+        td= line_item.discount
+        td= number_to_currency(line_item.line_price, precision: 4)
+h2
+  | Order Price:
+  span
+    - cost = @proposal.line_items.map { |li| li.product.price * li.quantity }.inject(:+)
+    =< number_to_currency(cost, precision: 4)
+
+.btn-toolbar
+  = link_to "Edit #{@proposal.name}", edit_proposal_path(@proposal), class: 'btn btn-lg btn-info'
+  = link_to 'View All', proposals_path, class: 'btn btn-lg btn-primary'

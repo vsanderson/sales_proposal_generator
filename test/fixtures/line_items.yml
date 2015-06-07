@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: line_items
+#
+#  id          :integer          not null, primary key
+#  proposal_id :integer
+#  product_id  :integer
+#  quantity    :integer
+#  discount    :decimal(, )
+#  notes       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: 
+  proposal: 
+  quantity: 
+  discount: 
+  notes: MyString
+
+two:
+  product: 
+  proposal: 
+  quantity: 
+  discount: 
+  notes: MyString

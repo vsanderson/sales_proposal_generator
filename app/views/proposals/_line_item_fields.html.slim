@@ -1,0 +1,25 @@
+.row
+  .col-sm-3
+    .form-group
+      = f.label :product_id, 'Product name'
+      = f.grouped_collection_select :product_id, Supplier.all, :products, :name, :id, :name, { prompt: 'Select a product:' }, class: 'form-control'
+  .col-sm-1
+    .form-group
+      = f.label :quantity, class: 'control-label'
+      = f.number_field :quantity, class: 'form-control'
+  .col-sm-1
+    .form-group
+      = f.label :discount, class: 'control-label'
+      = f.number_field :discount, class: 'form-control'
+  .col-sm-5
+    .form-group
+      = f.label :notes, class: 'control-label'
+      = f.text_field :notes, class: 'form-control'
+  .col-sm-1
+    .form-group
+      = f.label :price
+      p.product-price
+  .col-sm-1
+    .form-group
+      = f.label :_destroy, 'Remove'
+      = f.check_box :_destroy

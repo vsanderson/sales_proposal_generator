@@ -1,0 +1,4 @@
+.btn-toolbar
+  = link_to 'View', proposal_path(proposal), class: 'btn btn-sm btn-info'
+  = link_to 'Edit', edit_proposal_path(proposal), class: 'btn btn-sm btn-warning'
+  = link_to 'Delete', proposal_path(proposal), method: :delete, confirm: 'Are you sure?', class: 'btn btn-sm btn-danger'
