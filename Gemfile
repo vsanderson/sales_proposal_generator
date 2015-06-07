@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'bcrypt'
 gem 'annotate'
+gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'unicorn'
