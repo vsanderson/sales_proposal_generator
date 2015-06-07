@@ -1,15 +1,17 @@
-table.table
-  thead
-    tr
-      = render 'index_row_headers'
-      th
-  tbody
-    - @customers.each do |customer|
+- content_for :page_title, 'All Customers'
+.table-responsive
+  table.table
+    thead
       tr
-        = render 'index_rows', customer: customer
-        td
-          .pull-right
-            = render 'index_row_actions', customer: customer
+        = render 'index_row_headers'
+        th
+    tbody
+      - @customers.each do |customer|
+        tr
+          = render 'index_rows', customer: customer
+          td
+            .pull-right
+              = render 'index_row_actions', customer: customer
 
 br
 = link_to 'New Customer', new_customer_path, class: 'btn btn-lg btn-default'
