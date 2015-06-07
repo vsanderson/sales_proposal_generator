@@ -14,7 +14,6 @@ gem 'bcrypt'
 gem 'annotate'
 
 group :production do
-  gem 'slim'
   gem 'unicorn'
 end
 
