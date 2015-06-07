@@ -16,7 +16,7 @@ gem 'rails_12factor'
 gem 'newrelic_rpm'
 
 group :production do
-  gem 'unicorn'
+  gem 'puma'
 end
 
 group :development, :test do
