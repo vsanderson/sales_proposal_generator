@@ -1,6 +1,7 @@
-# README
+# Sales Proposal Generator
 
-rails generate scaffold Product description:text supplier:references asi_num:integer item_number:string page_num:integer
-rails generate scaffold Customer name:string category:string
-rails generate scaffold Supplier name:string product:references
-rails generate scaffold User name:string email:string password_digest:string
+This is a project I did for a friend and as an academic exercise. It's accidentally a shopping cart!
+
+Uses Bootstrap and Slim on the front end, and a standard Rails/Postgres stack otherwise.
+ 
+Eventually this will have Save/Print PDF as well as email capabilities. 

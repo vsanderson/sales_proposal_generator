@@ -11,7 +11,6 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'bcrypt'
-gem 'annotate'
 gem 'rails_12factor'
 gem 'newrelic_rpm'
 
@@ -20,6 +19,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'annotate'
   gem 'quiet_assets'
   gem 'thin'
   gem 'byebug'
